@@ -1,0 +1,18 @@
+version: '3.8'
+
+services:
+  lms-api:
+    build:
+      context: .
+      dockerfile: ./LMS API/Dockerfile
+      args:
+        APP_UID: 1000             # if you’re using the USER trick
+        BUILD_CONFIGURATION: Release
+    ports:
+      - "8080:8080"
+    environment:
+      ASPNETCORE_ENVIRONMENT: Development
+      ConnectionStrings__DefaultConnection: "Data Source=LMS.db"
+    volumes:
+      # mount the DB from host into /app inside the container
+      - ./LMS API/LMS.db:/app/LMS.db

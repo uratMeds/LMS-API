@@ -1,0 +1,19 @@
+# VS & Rider
+.vs/
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+
+# Build output
+bin/
+obj/
+
+# Rider
+.idea/
+
+# Logs
+*.log
+
+# SQLite DB if you don’t want it versioned
+LMS.db
